@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 이 아래는 지우지 마세요 -->
+    {% if captcha %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {% endif %}
+    <script src="{{ url_for('static', filename='func.js') }}"></script>
+    <script src="{{ url_for('static', filename='render.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main_required.css') }}">
+    <!-- 이 위는 지우지 마세요 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    {% block css %}{% endblock %}
+    <title>{{ wiki_name }}</title>
+</head>
+<body>
+    <!-- modal_background 지우지 마세요 -->
+    <div id="modal_background" style="display: none;"></div>
+    {% block outcontent %}{% endblock %}
+    {% block content %}{% endblock %}
+    <!-- main.js 지우지 마세요 -->
+    <script src="{{ url_for('static', filename = 'main.js') }}"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>
