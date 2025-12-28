@@ -11,13 +11,15 @@
     <script src="{{ url_for('static', filename='func.js') }}"></script>
     <script src="{{ url_for('static', filename='render.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='main_required.css') }}">
+    <link rel="stylesheet" href="{{ url_for('skin_config_css', skin=skin) }}">
+    <script src="{{ url_for('skin_config_js', skin=skin) }}"></script>
     <!-- 이 위는 지우지 마세요 -->
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     {% block css %}{% endblock %}
     <title>{{ wiki_name }}</title>
 </head>
 <body>
-    <!-- modal_background 지우지 마세요 -->
+    <!-- modal_background 및 outcontent 지우지 마세요 -->
     <div id="modal_background" style="display: none;"></div>
     {% block outcontent %}{% endblock %}
     {% block content %}{% endblock %}
