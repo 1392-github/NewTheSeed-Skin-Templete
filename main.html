@@ -14,8 +14,8 @@
     <script src="{{ url_for('static', filename='func.js') }}"></script>
     <script src="{{ url_for('static', filename='render.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='main_required.css') }}">
-    <link rel="stylesheet" href="{{ url_for('skin_config_css', skin=skin) }}">
-    <script src="{{ url_for('skin_config_js', skin=skin) }}"></script>
+    <link rel="stylesheet" href="{{ url_for('skin_config_css', skin=skin_id) }}">
+    <script src="{{ url_for('skin_config_js', skin=skin_id) }}"></script>
     <!-- 이 위는 지우지 마세요 -->
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     {% block css %}{% endblock %}
